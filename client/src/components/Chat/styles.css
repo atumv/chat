@@ -1,0 +1,45 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  width: 160px;
+}
+
+.sent-message {
+  align-self: flex-start;
+}
+
+.received-message {
+  align-self: flex-end;
+}
+
+.message-text {
+  margin: 0;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-body {
+  height: 75vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 500px;
+  padding-bottom: 20px;
+}
+
+.chat-body:hover {
+  overflow-y: scroll;
+}
+
+.chat-footer {
+  display: flex;
+  justify-content: center;
+}
