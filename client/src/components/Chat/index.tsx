@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Card, Form, Input, Button, Space } from 'antd';
-import { Message } from '@shared/utils/interfaces';
+import { Message } from '@shared/types';
 import { observer } from 'mobx-react-lite';
 import appStore from '@/store/appStore';
 import './styles.css';

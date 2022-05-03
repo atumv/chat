@@ -1,7 +1,7 @@
 import { makeObservable, observable, action } from 'mobx';
 import { io, Socket } from 'socket.io-client';
-import { WEB_SOCKET_HOST } from '@shared/utils/config';
-import { Message } from '@shared/utils/interfaces';
+import { WEB_SOCKET_HOST } from '@shared/constants';
+import { Message } from '@shared/types';
 
 class Store {
   socket: Socket = io(WEB_SOCKET_HOST);
