@@ -12,13 +12,13 @@ git clone https://github.com/atumv/chat.git && cd chat/server && npm i && cd ../
 
 ## Running
 
-First terminal:
+:desktop_computer: First terminal:
 
 ```sh
 cd chat/server && npm start
 ```
 
-Second terminal:
+:desktop_computer: Second terminal:
 
 ```sh
 cd chat/client && npm start
