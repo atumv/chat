@@ -3,7 +3,7 @@ import { Card, Form, Input, Button, Space } from 'antd';
 import { Message } from '@shared/types';
 import { observer } from 'mobx-react-lite';
 import appStore from '@/store/appStore';
-import './styles.css';
+import styles from './styles.module.css';
 
 export const Chat: React.FC = observer(() => {
   const {
@@ -33,31 +33,33 @@ export const Chat: React.FC = observer(() => {
   }, [socket]);
 
   return (
-    <div className="chat-window">
-      <div className="chat-body" ref={chatBody}>
-        <div className="message-container">
+    <div className={styles.chatWindow}>
+      <div className={styles.chatBody} ref={chatBody}>
+        <div className={styles.messageContainer}>
           {messages.map((message: Message, idx) => (
             <Card
               className={
-                name === message.author ? 'message sent-message' : 'message received-message'
+                name === message.author
+                  ? `${styles.message} ${styles.sentMessage}`
+                  : `${styles.message} ${styles.receivedMessage}`
               }
               key={idx}
               size="small"
               title={message.author}
               extra={message.time}
             >
-              <p className="message-text">{message.text}</p>
+              <p className={styles.messageText}>{message.text}</p>
             </Card>
           ))}
         </div>
       </div>
 
-      <div className="chat-footer">
-        <Form className="send-form" layout="inline" name="basic" onFinish={sendMessage}>
+      <div className={styles.chatFooter}>
+        <Form className={styles.sendForm} layout="inline" name="basic" onFinish={sendMessage}>
           <Space size="small">
             <Form.Item noStyle>
               <Input
-                className="msg-input"
+                className={styles.messageInput}
                 type="text"
                 size="large"
                 value={currentMessage}
@@ -66,7 +68,7 @@ export const Chat: React.FC = observer(() => {
               />
             </Form.Item>
             <Form.Item noStyle>
-              <Button className="send-btn" size="large" htmlType="submit">
+              <Button className={styles.sendBtn} size="large" htmlType="submit">
                 Send
               </Button>
             </Form.Item>
